@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Comentarios
 {
+    const REGISTRO_EXITOSO = 'Se guardó exitosamente';
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -65,4 +66,39 @@ class Comentarios
 
         return $this;
     }
+
+    /**
+     * 
+     * @return mixed
+     */
+    public function getUser() : ?User
+    {
+        return $this->user;
+    }
+
+   /**
+    * @param mixed $user
+    */
+    public function setUser($user):void
+    {
+        $this->user = $user;
+    }
+
+    /**
+     * 
+     * @return mixed
+     */
+    public function getPost() : ?Posts
+    {
+        return $this->post;
+    }
+
+    /**
+    * @param mixed $post
+    */
+    public function setPost($post):void
+    {
+        $this->post = $post;
+    }
+    
 }

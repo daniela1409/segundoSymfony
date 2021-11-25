@@ -47,4 +47,10 @@ class PostsRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function buscarPosts(){
+        return $this->getEntityManager()->createQuery(
+            'SELECT p.titulo, p.id, p.foto, p.fecha_publicacion, u.nombre
+            FROM App:Posts p join p.user u'
+        );
+    }
 }
